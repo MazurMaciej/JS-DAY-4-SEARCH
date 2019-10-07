@@ -26,17 +26,16 @@ const input = document.querySelector('input.search');
 const ul = document.querySelector('ul.suggestions');
 
 li.forEach(item=>liCities.push(item.city));
-console.log(li)
-console.log(liCities);
+
 
 const changeInput = (e) => {
   const searchText = e.target.value.toLowerCase();
-//   if(li.length !== 0){
-//   const result = li.filter(item => item.city.includes(searchText)
-//   );
-// };
+  if(li.length !== 0){
+  const result = liCities.filter(item => item.includes(searchText)
+  );
+};
   ul.textContent= " ";
-
+  
 }
 input.addEventListener('input', changeInput)
 </script>
