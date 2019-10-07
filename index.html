@@ -16,35 +16,29 @@
   </form>
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-const newList = [];
 const li = []
+const liCities = [];
 fetch(endpoint)
   .then(blob => blob.json())
   .then(data => li.push(...data));
 
-
-// const liCities = [];
-// if(li.length !== 0){
-// li.forEach(item => liCities.push(item.city));
-// }
-
 const input = document.querySelector('input.search');
 const ul = document.querySelector('ul.suggestions');
 
+li.forEach(item=>liCities.push(item.city));
+console.log(li)
+console.log(liCities);
 
 const changeInput = (e) => {
   const searchText = e.target.value.toLowerCase();
-  if(li.length !== 0){
-  const result = li.filter(item => item.city.includes(searchText)
-  );
-};
+//   if(li.length !== 0){
+//   const result = li.filter(item => item.city.includes(searchText)
+//   );
+// };
   ul.textContent= " ";
-  console.log(result);
 
 }
 input.addEventListener('input', changeInput)
-console.log(liCities);
 </script>
 </body>
 </html>
-
