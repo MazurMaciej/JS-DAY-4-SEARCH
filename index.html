@@ -40,7 +40,11 @@
         console.log(searchText);
       };
       ul.textContent = " ";
-      console.log(result);
+      result.forEach(item => {
+        const filterCity = document.createElement('li');
+        filterCity.innerHTML = (item);
+        ul.appendChild(filterCity);
+    })
     }
     input.addEventListener('input', changeInput)
   </script>
