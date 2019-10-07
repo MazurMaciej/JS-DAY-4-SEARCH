@@ -30,7 +30,7 @@ const changeInput = (e) => {
   const searchText = e.target.value.toLowerCase();
   console.log(searchText);
   if(li.length !== 0){
-  const result = li.filter(item => {item.city.toLowerCase().includes(searchText);
+  const result = li.filter(item => {item.city.includes(searchText);
   })
 };
   ul.textContent= " ";
@@ -42,3 +42,4 @@ input.addEventListener('input', changeInput)
 </script>
 </body>
 </html>
+
